@@ -10,7 +10,7 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
-  return (
+return (
     <ReactProvider>
       <html lang="en">
        <body className={inter.className}>{children}</body>
