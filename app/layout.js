@@ -5,8 +5,11 @@ import { ReactProvider } from './ReactProvider'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Movies-API',
+  title: 'Jet protocol',
   description: 'Provides the list of movies using third party api',
+  icons:{
+    icon: '/next.svg'
+  }
 }
 
 export default function RootLayout({ children }) {

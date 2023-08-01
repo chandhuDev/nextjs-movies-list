@@ -3,4 +3,49 @@
 @tailwind utilities;
 
 
+@keyframes slider {
+   from {
+      transform: translateX(0);
+   }
+   to {
+      transform: translateX(-100%);
+   }    
+}
 
+.images {
+    overflow: hidden;
+    padding: 40px 0;
+    white-space: nowrap;
+    position: relative;
+}
+
+
+.images:before,
+.images:after {
+  position: absolute;
+  top: 8;
+  width: 200px;
+  height: 50%;
+  content: "";
+  z-index: 2;
+}
+
+.images:before {
+  left: 0;
+  bottom: 10;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.98), rgb(0, 0, 0));
+}
+
+.images:after {
+  right: 0;
+  bottom: 10;
+  background: linear-gradient(to right, rgba(0,0,0,0.98), rgba(0,0,0));
+} 
+
+
+
+.images-slider {
+    display: inline-flex;
+    flex-direction: row;
+    animation: 15s slider infinite linear;
+}

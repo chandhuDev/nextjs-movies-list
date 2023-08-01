@@ -3,7 +3,7 @@ import React from 'react'
 import { useQuery } from '@tanstack/react-query'
 
 const page = () => {
-    const { isLoading, isError, data, error } = useQuery({
+   const { isLoading, isError, data, error } = useQuery({
         queryKey: ['movies'],
         queryFn: ()=> fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.NEXT_PUBLIC_TMDB_API}&language=en-US&page=1&region=IN`).then((res)=>res.json()),
     })
@@ -20,13 +20,12 @@ const page = () => {
 
     if (isLoading) {
         return <span>Loading...</span>
-      }
+    }
     
-    if (isError) {
+    else if (isError) {
         return <span>Error: {error.message}</span>
     }
-
-return (
+  return (
     <div className='w-full h-full relative'>
       <div className='px-3 md:px-10 md:py-10 py-5 w-full h-full grid md:grid-cols-4 grid-cols-2 md:gap-6 gap-3'>
         {
