@@ -16,10 +16,12 @@ const Home = () => {
   const router = useRouter()
 
   const navigateHandler = () => {
-  if(userSession) {
-    router.push('/home')
-  }
-  router.push('/login')
+    if(userSession) {
+      router.push('/home')
+    }
+    else{
+      router.push('/login')
+    }
   }
 
  useEffect(()=>{
